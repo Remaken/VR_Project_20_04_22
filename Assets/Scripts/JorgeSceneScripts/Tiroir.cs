@@ -26,7 +26,7 @@ public class Tiroir : BaseInteractable
         _tiroirRotation = _tiroirRotationBase;
         
         float delta = interactorPos.z-_controllerDirection.z;
-        transform.position = new Vector3(_poignéePosition.x, _poignéePosition.y, Mathf.Clamp(transform.position.z*delta, -1.17f, -0.607f));
+        transform.position = new Vector3(_poignéePosition.x, _poignéePosition.y, Mathf.Clamp(transform.position.z+delta, -1.17f, -0.607f));
 
     }
 }
