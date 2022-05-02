@@ -9,6 +9,8 @@ public class Tiroir : BaseInteractable
     private Vector3 _poignéePosition;
     private Quaternion _tiroirRotation;
     private Quaternion _tiroirRotationBase;
+    private Vector3 _currentControllerPos;
+    private Vector3 _previousControllerPos;
 
     private void Awake()
     {
@@ -19,13 +21,17 @@ public class Tiroir : BaseInteractable
     protected override void ContinuousAction(Vector3 interactorPos)
     {
         base.ContinuousAction(interactorPos);
+        if (_previousControllerPos == null || _previousControllerPos == Vector3.zero)
+        {
+            _previousControllerPos = interactorPos;
+        }
+        _currentControllerPos = interactorPos;
+        _controllerDirection = _currentControllerPos - _previousControllerPos;
+        _previousControllerPos = _currentControllerPos;
         
-        Vector3 currentControllerPos = new Vector3();
-        _controllerDirection = currentControllerPos - interactorPos;
-        currentControllerPos = interactorPos;
         _tiroirRotation = _tiroirRotationBase;
         
-        float delta = interactorPos.z-_controllerDirection.z;
+        float delta = _controllerDirection.z;
         transform.position = new Vector3(_poignéePosition.x, _poignéePosition.y, Mathf.Clamp(transform.position.z+delta, -1.17f, -0.607f));
 
     }

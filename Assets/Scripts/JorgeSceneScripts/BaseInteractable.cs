@@ -65,7 +65,7 @@ public class BaseInteractable : MonoBehaviour
         
     }
 
-    private void Update()
+    protected void Update()
     {
         if (_objectSelected)
         {
