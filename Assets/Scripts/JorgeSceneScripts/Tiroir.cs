@@ -19,9 +19,14 @@ public class Tiroir : BaseInteractable
     protected override void ContinuousAction(Vector3 interactorPos)
     {
         base.ContinuousAction(interactorPos);
-        _controllerDirection = _poignéePosition - interactorPos;
+        
+        Vector3 currentControllerPos = new Vector3();
+        _controllerDirection = currentControllerPos - interactorPos;
+        currentControllerPos = interactorPos;
         _tiroirRotation = _tiroirRotationBase;
-        _poignéePosition.z = interactorPos.z;
+        
+        float delta = interactorPos.z-_controllerDirection.z;
+        transform.position = new Vector3(_poignéePosition.x, _poignéePosition.y, Mathf.Clamp(transform.position.z*delta, -1.17f, -0.607f));
 
     }
 }
