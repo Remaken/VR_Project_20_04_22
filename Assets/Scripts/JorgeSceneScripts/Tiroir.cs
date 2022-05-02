@@ -29,10 +29,10 @@ public class Tiroir : BaseInteractable
         _controllerDirection = _currentControllerPos - _previousControllerPos;
         _previousControllerPos = _currentControllerPos;
         
-        _tiroirRotation = _tiroirRotationBase;
         
         float delta = _controllerDirection.z;
-        transform.position = new Vector3(_poignéePosition.x, _poignéePosition.y, Mathf.Clamp(transform.position.z+delta, -1.17f, -0.607f));
+        _tiroirRotation = _tiroirRotationBase;
+        _poignéePosition = new Vector3(_poignéePosition.x, _poignéePosition.y, Mathf.Clamp(_poignéePosition.z+delta, _poignéePosition.z-0.57f, _poignéePosition.z));
 
     }
 }
