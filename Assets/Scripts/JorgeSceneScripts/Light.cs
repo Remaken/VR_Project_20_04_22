@@ -18,7 +18,7 @@ public class Light : BaseInteractable
       }
       else
       {
-         enabled = true;
+         roomLight.enabled = true;
          roomLightBulb.material.EnableKeyword("_EMISSION");
       }
    }

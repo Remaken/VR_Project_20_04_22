@@ -10,7 +10,7 @@ public class BaseInteractable : MonoBehaviour
     public XRSimpleInteractable objetInteratable;
     [SerializeField] private bool _instantInteraction=true;
     [SerializeField] private bool _objectSelected = false;
-    [SerializeField] private Vector3 _interactorPosition;
+    [SerializeField] protected Vector3 _interactorPosition;
     
     
 
