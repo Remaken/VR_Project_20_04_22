@@ -30,7 +30,7 @@ public class Tiroir : BaseInteractable
         _previousControllerPos = _currentControllerPos;
         
         
-        float delta = _controllerDirection.z;
+        float delta = Mathf.Clamp(_controllerDirection.z,0.01f,0.01f);
         _tiroirRotation = _tiroirRotationBase;
         _poignéePosition = new Vector3(_poignéePosition.x, _poignéePosition.y, Mathf.Clamp(_poignéePosition.z+delta, _poignéePosition.z-0.57f, _poignéePosition.z));
 

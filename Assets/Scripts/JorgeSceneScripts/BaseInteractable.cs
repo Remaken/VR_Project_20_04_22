@@ -10,7 +10,7 @@ public class BaseInteractable : MonoBehaviour
     public XRSimpleInteractable objetInteratable;
     [SerializeField] private bool _instantInteraction=true;
     [SerializeField] private bool _objectSelected = false;
-    [SerializeField] protected Vector3 _interactorPosition;
+    [SerializeField] protected Transform _interactorPosition;
     
     
 
@@ -32,7 +32,7 @@ public class BaseInteractable : MonoBehaviour
         if (!_instantInteraction)
         {
             _objectSelected = true;
-            _interactorPosition = arg0.interactorObject.transform.position;
+            _interactorPosition = arg0.interactorObject.transform;
         }
         else
         {
@@ -46,7 +46,7 @@ public class BaseInteractable : MonoBehaviour
         if (!_instantInteraction)
         {
             _objectSelected = false;
-            _interactorPosition = Vector3.zero;
+            _interactorPosition.position = Vector3.zero;
         }
         else
         {
@@ -69,7 +69,7 @@ public class BaseInteractable : MonoBehaviour
     {
         if (_objectSelected)
         {
-            ContinuousAction(_interactorPosition);
+            ContinuousAction(_interactorPosition.position);
         }
     }
 
