@@ -3984,7 +3984,7 @@ MonoBehaviour:
   objetInteratable: {fileID: 1188208121}
   _instantInteraction: 1
   _objectSelected: 0
-  _interactorPosition: {x: 0, y: 0, z: 0}
+  _interactorPosition: {fileID: 0}
 --- !u!114 &1188208121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9050,7 +9050,7 @@ MonoBehaviour:
   objetInteratable: {fileID: 2069772333}
   _instantInteraction: 1
   _objectSelected: 0
-  _interactorPosition: {x: 0, y: 0, z: 0}
+  _interactorPosition: {fileID: 0}
   roomLight: {fileID: 1485231913}
   roomLightBulb: {fileID: 242799093}
 --- !u!23 &2069772331
@@ -9695,9 +9695,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetInteratable: {fileID: 2087111738895877991}
-  _instantInteraction: 1
+  _instantInteraction: 0
   _objectSelected: 0
-  _interactorPosition: {x: 0, y: 0, z: 0}
+  _interactorPosition: {fileID: 0}
 --- !u!114 &2087111738895877991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9812,9 +9812,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetInteratable: {fileID: 2087111739730982350}
-  _instantInteraction: 1
+  _instantInteraction: 0
   _objectSelected: 0
-  _interactorPosition: {x: 0, y: 0, z: 0}
+  _interactorPosition: {fileID: 0}
 --- !u!114 &2087111739730982350
 MonoBehaviour:
   m_ObjectHideFlags: 0
