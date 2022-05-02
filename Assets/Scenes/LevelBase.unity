@@ -3561,7 +3561,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20784
+  m_Name: pb_Mesh20788
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9694,7 +9694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ab51afd09dfc6498c50a7b2e350167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetInteratable: {fileID: 0}
+  objetInteratable: {fileID: 2087111738895877991}
   _instantInteraction: 1
   _objectSelected: 0
   _interactorPosition: {x: 0, y: 0, z: 0}
@@ -9811,7 +9811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ab51afd09dfc6498c50a7b2e350167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetInteratable: {fileID: 0}
+  objetInteratable: {fileID: 2087111739730982350}
   _instantInteraction: 1
   _objectSelected: 0
   _interactorPosition: {x: 0, y: 0, z: 0}
