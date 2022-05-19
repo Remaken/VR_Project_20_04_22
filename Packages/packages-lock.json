@@ -47,7 +47,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.14",
+      "version": "2.0.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -172,7 +172,7 @@
       }
     },
     "com.unity.xr.arsubsystems": {
-      "version": "4.1.9",
+      "version": "4.1.10",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -190,7 +190,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.interaction.toolkit": {
-      "version": "2.0.1",
+      "version": "2.0.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -209,7 +209,7 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.subsystemregistration": "1.0.6"
+        "com.unity.subsystemregistration": "1.0.5"
       },
       "url": "https://packages.unity.com"
     },
@@ -224,8 +224,8 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.management": {
-      "version": "4.2.0",
-      "depth": 1,
+      "version": "4.2.1",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.subsystems": "1.0.0",
@@ -258,7 +258,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.windowsmr": {
-      "version": "4.6.1",
+      "version": "4.6.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {

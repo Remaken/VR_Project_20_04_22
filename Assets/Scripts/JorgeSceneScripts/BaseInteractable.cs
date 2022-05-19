@@ -2,17 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class BaseInteractable : MonoBehaviour
 {
-
-    public XRSimpleInteractable objetInteratable;
+    public XRBaseInteractable _simpleObjectInteratable;
     [SerializeField] private bool _instantInteraction=true;
     [SerializeField] private bool _objectSelected = false;
     [SerializeField] protected Transform _interactorPosition;
     [SerializeField] protected bool _objectHovered = false;
     [SerializeField] protected GameObject _hoveringPrefab;
+    [SerializeField] protected Camera _player;
     private GameObject _hoveringText;
     private bool _textWasShown=false;
     private Transform _hoveringObjectTransform;
@@ -24,20 +25,20 @@ public class BaseInteractable : MonoBehaviour
 
     protected void OnEnable()
     { 
-        objetInteratable.selectEntered.AddListener(StartSelect);
-        objetInteratable.selectExited.AddListener(ExitSelect);
-        objetInteratable.hoverEntered.AddListener(ObjectHovered);
-        objetInteratable.hoverExited.AddListener(ExitHovered);
+        _simpleObjectInteratable.selectEntered.AddListener(StartSelect);
+        _simpleObjectInteratable.selectExited.AddListener(ExitSelect);
+        _simpleObjectInteratable.hoverEntered.AddListener(ObjectHovered);
+        _simpleObjectInteratable.hoverExited.AddListener(ExitHovered);
     }
 
    
 
     protected  void OnDisable()
     {
-        objetInteratable.selectEntered.RemoveListener(StartSelect);
-        objetInteratable.selectExited.RemoveListener(ExitSelect);
-        objetInteratable.hoverEntered.RemoveListener(ObjectHovered);
-        objetInteratable.hoverExited.RemoveListener(ExitHovered);
+        _simpleObjectInteratable.selectEntered.RemoveListener(StartSelect);
+        _simpleObjectInteratable.selectExited.RemoveListener(ExitSelect);
+        _simpleObjectInteratable.hoverEntered.RemoveListener(ObjectHovered);
+        _simpleObjectInteratable.hoverExited.RemoveListener(ExitHovered);
     }
     
     
@@ -56,7 +57,7 @@ public class BaseInteractable : MonoBehaviour
     }
 
 
-    protected void ExitSelect(SelectExitEventArgs arg0)
+    protected virtual void ExitSelect(SelectExitEventArgs arg0)
     {
         if (!_instantInteraction)
         {
@@ -70,27 +71,31 @@ public class BaseInteractable : MonoBehaviour
     }
     private void ObjectHovered(HoverEnterEventArgs arg0)
     {
+        _objectHovered = true;
+        _hoveringObjectTransform = arg0.interactableObject.transform;
         if (!_instantInteraction)
         {
             
         }
         else
         {
-                _objectHovered = true;
-                _hoveringObjectTransform = arg0.interactableObject.transform;
+                /*_objectHovered = true;
+                _hoveringObjectTransform = arg0.interactableObject.transform;*/
                 
         }
 
     }
     private void ExitHovered(HoverExitEventArgs arg0)
     {
+        _objectHovered = false;
+        _hoveringObjectTransform = null;
         if (!_instantInteraction)
         {
         }
         else
         {
-            _objectHovered = false;
-            _hoveringObjectTransform = null;
+            /*_objectHovered = false;
+            _hoveringObjectTransform = null;*/
         }
     }
 
@@ -128,6 +133,7 @@ public class BaseInteractable : MonoBehaviour
         if (!_textWasShown)
         {
             _hoveringText = Instantiate(_hoveringPrefab, _hoveringObjectTransform.position,_hoveringObjectTransform.rotation);
+            _hoveringText.transform.LookAt(_player.transform);
             _textWasShown = true;
         }
     }
